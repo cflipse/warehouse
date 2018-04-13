@@ -1,7 +1,10 @@
-require 'types'
+# frozen_string_literal: true
+
+require "types"
 
 class ApplicationModel < ROM::Struct
-  def self.inherited(base)
+
+  def self.inherited base
     super
 
     base.constructor_type :schema
@@ -17,4 +20,5 @@ class ApplicationModel < ROM::Struct
   def persisted?
     id.present?
   end
+
 end
